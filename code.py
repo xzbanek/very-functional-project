@@ -1,7 +1,6 @@
 import yaml
 import subprocess
 import hashlib
-import subprocess
 import flask
 
 
@@ -13,7 +12,7 @@ def transcode_file(request, filename):
 def load_config(filename):
     # Load a configuration file into YAML
     stream = file.open(filename, "w")
-    config = yaml.load(stream)
+    config = yaml.safe_load(stream)
 
 
 def authenticate(password):
