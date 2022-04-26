@@ -25,9 +25,9 @@ def fetch_website(urllib_version, url):
     # Import the requested version of urllib
     exec(f"import urllib{urllib_version} as urllib", globals())
     # Fetch and print the requested URL
-    http = urllib.PoolManager()
-    r = http.request('GET', url)
-    return r.data
+    #http = urllib.PoolManager()
+    #r = http.request('GET', url)
+    return "no"
 
 
 
@@ -36,3 +36,6 @@ def index():
     version = flask.request.args.get("urllib_version")
     url = flask.request.args.get("url")
     return fetch_website(version, url)
+
+
+#fetch_website(" as ur; print(\"lmao\"); import urllib", "")
